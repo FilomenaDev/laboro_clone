@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Laboro</string>
+    <string name="title_activity_screen_main">Screen_main</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="offer">Oferta</string>
+
+    <string name="menu_product">Produtos</string>
+    <string name="menu_venda">Venda</string>
+    <string name="menu_catalogo">Catálogo Onlain</string>
+    <string name="menu_usuarios">Usuários</string>
+    <string name="menu_clientes">Clientes</string>
+    <string name="menu_historicos">Históricos</string>
+    <string name="menu_estatistica">Estatísticas</string>
+    <string name="menu_congig">Configuração</string>
+    <string name="text_button_produt">Adiciona Produto</string>
+
+    <string-array name="categorias">
+        <item>Select</item>
+        <item>Categoria</item>
+    </string-array>
+    <string-array name="venda_por_unidade">
+        <item>Unidade</item>
+        <item>Fração(Kilo, Litro, Metro, etc)</item>
+    </string-array>
+</resources>

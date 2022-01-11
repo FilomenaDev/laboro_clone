@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_venda"
+            android:icon="@drawable/ic_baseline_add_task"
+            android:title="@string/menu_venda" />
+        <item
+            android:id="@+id/nav_product"
+            android:icon="@drawable/ic_baseline_border"
+            android:title="@string/menu_product" />
+        <item
+            android:id="@+id/nav_catalogo"
+            android:icon="@drawable/ic_baseline_auto_stories"
+            android:title="@string/menu_catalogo" />
+        <item
+            android:id="@+id/nav_clientes"
+            android:icon="@drawable/ic_baseline_person_24"
+            android:title="@string/menu_clientes" />
+        <item
+            android:id="@+id/nav_historico"
+            android:icon="@drawable/ic_baseline_catalogo"
+            android:title="@string/menu_historicos" />
+        <item
+            android:id="@+id/nav_usuarios"
+            android:icon="@drawable/ic_baseline_user"
+            android:title="@string/menu_usuarios" />
+        <item
+            android:id="@+id/nav_estatistica"
+            android:icon="@drawable/ic_baseline_bar_chart"
+            android:title="@string/menu_estatistica" />
+        <item
+            android:id="@+id/nav_config"
+            android:icon="@drawable/ic_baseline_miscellaneous_services"
+            android:title="@string/menu_congig" />
+
+    </group>
+</menu>
