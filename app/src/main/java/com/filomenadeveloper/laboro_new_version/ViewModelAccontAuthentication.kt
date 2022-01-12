@@ -12,7 +12,7 @@ class ViewModelAccontAuthentication(private val repository: Repository): ViewMod
         firstName: String,
         email: String,
         password: String,
-    ) = liveData<Resource<UserModel>>(Dispatchers.IO){
+    ) = liveData(Dispatchers.IO){
         val body: HashMap<String,Any> = hashMapOf()
         body["email"]= email
         body["first_name"]= firstName

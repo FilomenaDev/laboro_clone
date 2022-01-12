@@ -37,8 +37,10 @@ class Screen_Login:AppCompatActivity() {
         ).observe(this,{
             it?.let { resource ->
                 when(resource.status){
-                    Status.LOADING->
-                   Toast.makeText(this@Screen_Login,"criado",Toast.LENGTH_LONG).show()
+                    Status.SUCCESS ->{
+                        Toast.makeText(this@Screen_Login,"criado",Toast.LENGTH_LONG).show()
+                    }
+                 //
                 }
             }
         })

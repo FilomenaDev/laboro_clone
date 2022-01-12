@@ -41,7 +41,7 @@ interface ApiClient {
         val endPoints: ApiClient = getRetrofit().create(ApiClient::class.java)
     }
 
-    @POST("/users")
+    @POST("users")
     suspend fun postCreatAccontEdpoit(
         @Body body: HashMap<String, Any>
     ): UserModel
