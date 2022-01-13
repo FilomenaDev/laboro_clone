@@ -9,18 +9,9 @@ import com.orhanobut.hawk.Hawk
 object DatabaseKeys {
     const val id: String = "idKey"
     const val firstName: String = "firstNameKey"
-    const val lastName: String = "lastNameKey"
     const val email: String = "emailKey"
-    const val phone: String = "phoneKey"
-    const val neighborhood: String = "neighborhoodKey"
-    const val street: String = "streetKey"
-    const val county: String = "countyKey"
-    const val points: String = "pointsKey"
-    const val idCountry: String = "idCountryKey"
+    const val owner: String = "neighborhoodKey"
     const val token: String = "idTokenKey"
-    const val tokenRefresh: String = "idTokenRefreshKey"
-    const val password: String = "idPassword"
-    const val app: String = "idAppKey"
 }
 
 class HawkStorage {
@@ -42,12 +33,6 @@ class HawkStorage {
         }
     }
 
-    fun getCountryData(key: String): Int {
-        return when {
-            checkData(DatabaseKeys.id) -> getData(key) as Int
-            else -> 1
-        }
-    }
 
     fun checkData(key: String): Boolean = Hawk.contains(key)
 

@@ -46,4 +46,9 @@ interface ApiClient {
         @Body body: HashMap<String, Any>
     ): UserModel
 
+    @POST("sessions")
+    suspend fun postSingAccontEdpoit(
+        @Body body: HashMap<String, Any>
+    ): UserModel
+
 }

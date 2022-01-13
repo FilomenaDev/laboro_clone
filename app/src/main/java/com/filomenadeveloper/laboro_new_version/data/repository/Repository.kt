@@ -8,4 +8,8 @@ class Repository(private val apiClient: ApiClient) {
     suspend fun createAccontUserRepository(body: HashMap<String,Any>):UserModel{
         return apiClient.postCreatAccontEdpoit(body)
     }
+
+    suspend fun singLoginAccontUserRepository(body: HashMap<String,Any>):UserModel{
+        return apiClient.postSingAccontEdpoit(body)
+    }
 }

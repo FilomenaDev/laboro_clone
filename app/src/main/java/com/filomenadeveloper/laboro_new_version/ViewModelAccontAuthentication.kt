@@ -12,14 +12,27 @@ class ViewModelAccontAuthentication(private val repository: Repository): ViewMod
         firstName: String,
         email: String,
         password: String,
-    ) = liveData(Dispatchers.IO){
+    ) = liveData<Resource<UserModel>>(Dispatchers.IO){
         val body: HashMap<String,Any> = hashMapOf()
         body["email"]= email
         body["first_name"]= firstName
         body["password"]= password
         emit(Resource.loading(data = null))
         try {
-             repository.createAccontUserRepository(body)
+            emit(Resource.success(data = repository.createAccontUserRepository(body)))
+        }catch (exception:Exception){
+            emit(Resource.error(data = null, message = exception.message ?: "Error Occurred!"))
+        }
+    }
+
+    fun postAccontLogin(email: String,
+                        password: String,)= liveData<Resource<UserModel>>(Dispatchers.IO){
+        val body: HashMap<String,Any> = hashMapOf()
+        body["email"]= email
+        body["password"]= password
+        emit(Resource.loading(data = null))
+        try {
+            emit(Resource.success(data = repository.singLoginAccontUserRepository(body)))
         }catch (exception:Exception){
             emit(Resource.error(data = null, message = exception.message ?: "Error Occurred!"))
         }
