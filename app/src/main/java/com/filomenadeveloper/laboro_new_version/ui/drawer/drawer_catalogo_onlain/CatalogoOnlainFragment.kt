@@ -1,4 +1,4 @@
-package com.filomenadeveloper.laboro_new_version.ui.catalogoOnlain
+package com.filomenadeveloper.laboro_new_version.ui.drawer.drawer_catalogo_onlain
 
 import android.os.Bundle
 import android.view.LayoutInflater

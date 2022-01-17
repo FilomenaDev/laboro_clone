@@ -1,4 +1,4 @@
-package com.filomenadeveloper.laboro_new_version.ui.venda
+package com.filomenadeveloper.laboro_new_version.ui.drawer.venda
 
 import android.os.Bundle
 import android.view.*
@@ -28,6 +28,12 @@ class VendaFragment : Fragment() {
         mRecycler.layoutManager = layoutManager
         val mVenda = ArrayList<venda>()
         mVenda.add(venda(R.drawable.ic_baseline_add_box_24))
+        mVenda.add(venda(R.color.cinza))
+        mVenda.add(venda(R.color.cinza))
+        mVenda.add(venda(R.color.cinza))
+        mVenda.add(venda(R.color.cinza))
+        mVenda.add(venda(R.color.cinza))
+        mVenda.add(venda(R.color.cinza))
         mVenda.add(venda(R.color.cinza))
         mVenda.add(venda(R.color.cinza))
         mVenda.add(venda(R.color.cinza))

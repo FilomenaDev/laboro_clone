@@ -46,13 +46,13 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_marginTop="15dp">
-        <EditText
+        <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/name_prod"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Nome do Produto"
-            android:drawableRight="@drawable/ic_baseline_emergency_24"
             android:textColorHint="@color/black"
             android:inputType="textAutoCorrect" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -60,12 +60,12 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_marginTop="20dp">
-        <EditText
+        <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/price_prod"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:drawableRight="@drawable/ic_baseline_emergency_24"
             android:textColorHint="@color/black"
             android:inputType="numberDecimal"
             android:hint="Preço de venda" />
@@ -92,8 +92,9 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_marginTop="20dp">
-                <EditText
+                <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/price_pormocional_prod"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -113,26 +114,25 @@
                 android:text="IVA"
                 android:textSize="16dp" />
 
-
-            <TextView
-                android:text="Selecina Categoria"
-                android:layout_marginTop="20dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-            <Spinner
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
+                android:layout_marginTop="20dp">
+            <AutoCompleteTextView
                 android:id="@+id/categoria_prod"
-                android:backgroundTintMode="src_in"
-                android:backgroundTint="@color/black"
-                android:background="@drawable/background_spinner"
+                android:editable="false"
+                android:hint="Categoria"
                 android:layout_width="match_parent"
                 android:layout_height="55dp" />
-
+            </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_marginTop="20dp">
-                <EditText
+                <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/descricao_prod"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -145,9 +145,10 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_marginTop="20dp">
 
-                <EditText
+                <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/codigo_prod"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -161,8 +162,9 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_marginTop="20dp">
-                <EditText
+                <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/custo_prod"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -171,18 +173,15 @@
                     android:textColorHint="@color/black"
                     android:inputType="textAutoCorrect" />
             </com.google.android.material.textfield.TextInputLayout>
-
-            <TextView
-                android:text="Venda Por"
-                android:layout_marginTop="20dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
                 android:layout_marginTop="20dp">
-            <Spinner
+            <AutoCompleteTextView
                 android:id="@+id/por_unit_prod"
+                android:hint="Venda Por"
+                android:editable="false"
                 android:layout_width="match_parent"
                 android:layout_height="55dp" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -198,8 +197,6 @@
                 android:layout_height="wrap_content"/>
 
         </LinearLayout>
-
-
 
         <Button
             android:layout_width="match_parent"

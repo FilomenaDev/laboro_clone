@@ -8,7 +8,9 @@ import androidx.appcompat.widget.AppCompatEditText
 import com.filomenadeveloper.laboro_new_version.R
 import com.filomenadeveloper.laboro_new_version.Screen_main
 import com.filomenadeveloper.laboro_new_version.Status
-import com.filomenadeveloper.laboro_new_version.ViewModelAccontAuthentication
+import com.filomenadeveloper.laboro_new_version.data.api.UserModel
+import com.filomenadeveloper.laboro_new_version.database.DatabaseKeys
+import com.filomenadeveloper.laboro_new_version.database.HawkStorage
 import com.filomenadeveloper.laboro_new_version.utils.ProgressDialogUtil
 import com.filomenadeveloper.laboro_new_version.utils.showAlertTapadoo
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -45,30 +47,39 @@ class Screen_registro:AppCompatActivity() {
                     Status.LOADING -> {
                         ProgressDialogUtil.show(this, "Por favor aguarde.")
                     }
-                    Status.SUCCESS ->{
+                    Status.SUCCESS -> {
                         ProgressDialogUtil.hide()
-                        resource.data?.let { response ->{
+                        resource.data?.let { response ->
+                            saveOnLocalDatabase(resource.data)
+                            startActivity(
+                                Intent(
+                                    this@Screen_registro,
+                                    Screen_main::class.java
+                                )
+                            )
+                            }
                         }
-                            showAlertTapadoo(
-                                this@Screen_registro,
-                                "Laboro",
-                                "Sucessos ao criar conta.",
-                                R.color.colorLightBlue)
-                            startActivity(Intent(this@Screen_registro,Screen_main::class.java))
-                        }
-                    }
                     Status.ERROR -> {
                         ProgressDialogUtil.hide()
                         showAlertTapadoo(
                             this,
                             "Laboro",
-                            "Erro ao criar conta.",
+                            "Erro ao criar conta. Verifica a sua conexao a internet",
                             R.color.colorMediumRed
                         )
                     }
                 }
             }
         })
+
+    }
+
+    private fun saveOnLocalDatabase(account: UserModel) {
+        HawkStorage().putData(DatabaseKeys.id, account.userId)
+        HawkStorage().putData(DatabaseKeys.email, account.userEmail)
+        HawkStorage().putData(DatabaseKeys.firstName, account.userFristName)
+        HawkStorage().putData(DatabaseKeys.owner, account.userOwner )
+        HawkStorage().putData(DatabaseKeys.token, account.token)
 
     }
 }

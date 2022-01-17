@@ -22,12 +22,13 @@ fun showAlertTapadoo(
     Alerter.create (activity)
         .setTitle(title)
         .setText(description)
+        .setTextAppearance(R.style.TextAppearance_AppCompat_Body1)
         .enableVibration(true)
         .enableIconPulse(true)
         .setBackgroundColorInt(colorBackground)
         .setBackgroundColorRes(colorBackground)
         .setDuration(5000)
-        .setIcon(R.drawable.brand)
+        .setIcon(R.mipmap.ic_launcher)
         .show()
 }
 

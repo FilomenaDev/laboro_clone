@@ -1,4 +1,4 @@
-package com.filomenadeveloper.laboro_new_version
+package com.filomenadeveloper.laboro_new_version.ui.drawer.drawer_produts.product
 
 import android.app.Activity
 import android.content.Intent
@@ -12,17 +12,18 @@ import android.view.View
 import android.widget.*
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.isVisible
+import androidx.appcompat.widget.AppCompatAutoCompleteTextView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
+import com.filomenadeveloper.laboro_new_version.R
 import java.io.IOException
 
 
-class MainActivity : AppCompatActivity() {
+class ActivityAddProduts : AppCompatActivity() {
 
     lateinit var resultUri: Uri
-    lateinit var spinnerCategoria: Spinner
-    lateinit var spinnerPorUnidade: Spinner
+    lateinit var spinnerCategoria: AppCompatAutoCompleteTextView
+    lateinit var spinnerPorUnidade: AppCompatAutoCompleteTextView
     lateinit var nameProd: EditText
     lateinit var priceProd: EditText
     lateinit var pricePromo: EditText
@@ -61,7 +62,8 @@ class MainActivity : AppCompatActivity() {
         mOptions.setOnClickListener {
             if(mLinearOptions.visibility == View.GONE) {
                 mLinearOptions.visibility = View.VISIBLE
-                mOptions.setCompoundDrawablesRelativeWithIntrinsicBounds(0,0,R.drawable.ic_baseline_arrow_drop_up,0)
+                mOptions.setCompoundDrawablesRelativeWithIntrinsicBounds(0,0,
+                    R.drawable.ic_baseline_arrow_drop_up,0)
             }
             else {
                 mLinearOptions.visibility = View.GONE
@@ -116,20 +118,21 @@ class MainActivity : AppCompatActivity() {
                 mDesconto.text = "$s"
 
             }})
+        val items = listOf("Sanduiche", "Festfod", "Roupas", "Telefones")
+        val itemsPor = listOf("Sanduiche", "Festfod", "Roupas", "Telefones")
+        val adapter = ArrayAdapter<String>(
+            this,
+            android.R.layout.simple_list_item_1,
+            items
+        )
+        spinnerCategoria.setAdapter(adapter)
 
-        ArrayAdapter.createFromResource(this,R.array.categorias,android.R.layout.simple_spinner_item)
-            .also { adapter ->
-                adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-
-                spinnerCategoria.adapter = adapter
-            }
-
-        ArrayAdapter.createFromResource(this,R.array.venda_por_unidade,android.R.layout.simple_spinner_item)
-            .also { adapter ->
-                adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-
-                spinnerPorUnidade.adapter = adapter
-            }
+        val adapterPor = ArrayAdapter<String>(
+            this,
+            android.R.layout.simple_list_item_1,
+            itemsPor
+        )
+        spinnerPorUnidade.setAdapter(adapterPor)
 
         mProfileImage.setOnClickListener(View.OnClickListener {
            OpenGallery()
@@ -161,6 +164,15 @@ class MainActivity : AppCompatActivity() {
             }
 
         }
+    }
+
+    private fun getCountriesList(): ArrayList<String> {
+        val countriesList = ArrayList<String>()
+        countriesList.add("India")
+        countriesList.add("Usa")
+        countriesList.add("Canada")
+        return countriesList
+
     }
 
 }

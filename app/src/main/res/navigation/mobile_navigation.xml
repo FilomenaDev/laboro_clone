@@ -8,20 +8,20 @@
 
     <fragment
         android:id="@+id/nav_venda"
-        android:name="com.filomenadeveloper.laboro_new_version.ui.venda.VendaFragment"
+        android:name="com.filomenadeveloper.laboro_new_version.ui.drawer.venda.VendaFragment"
         android:label="@string/menu_venda"
         tools:layout="@layout/fragment_venda" />
 
     <fragment
         android:id="@+id/nav_product"
-        android:name="com.filomenadeveloper.laboro_new_version.ui.product.ProductFragment"
+        android:name="com.filomenadeveloper.laboro_new_version.ui.drawer.drawer_produts.ProductFragmentNavigation"
         android:label="@string/menu_product"
         tools:layout="@layout/fragment_home" />
 
 
     <fragment
         android:id="@+id/nav_catalogo"
-        android:name="com.filomenadeveloper.laboro_new_version.ui.catalogoOnlain.CatalogoOnlainFragment"
+        android:name="com.filomenadeveloper.laboro_new_version.ui.drawer.drawer_catalogo_onlain.CatalogoOnlainFragment"
         android:label="@string/menu_catalogo"
         tools:layout="@layout/fragment_slideshow" />
 </navigation>

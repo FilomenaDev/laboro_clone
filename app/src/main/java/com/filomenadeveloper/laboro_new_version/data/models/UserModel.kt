@@ -1,5 +1,6 @@
 package com.filomenadeveloper.laboro_new_version.data.api
 
+import com.filomenadeveloper.laboro_new_version.data.models.Messege
 import com.google.gson.annotations.SerializedName
 
 data class UserModel(
@@ -18,7 +19,7 @@ data class UserModel(
     @SerializedName("token")
     var token:String = "",
     @SerializedName("email_confirmed")
-    var userConfirmedEmail:Boolean = false
+    var userConfirmedEmail:Boolean = false,
 )
 
 data class StoreModel(@SerializedName("id")

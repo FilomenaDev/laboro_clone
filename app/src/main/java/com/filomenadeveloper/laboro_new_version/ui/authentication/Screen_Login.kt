@@ -8,7 +8,6 @@ import androidx.appcompat.widget.AppCompatEditText
 import com.filomenadeveloper.laboro_new_version.R
 import com.filomenadeveloper.laboro_new_version.Screen_main
 import com.filomenadeveloper.laboro_new_version.Status
-import com.filomenadeveloper.laboro_new_version.ViewModelAccontAuthentication
 import com.filomenadeveloper.laboro_new_version.data.api.UserModel
 import com.filomenadeveloper.laboro_new_version.database.DatabaseKeys
 import com.filomenadeveloper.laboro_new_version.database.HawkStorage
@@ -46,43 +45,27 @@ class Screen_Login : AppCompatActivity() {
                     }
                     Status.SUCCESS ->{
                         ProgressDialogUtil.hide()
-                        resource.data?.let { response ->{
-                            print(response.userEmail)
-                            when {
-                                response !=null -> {
-                                    ProgressDialogUtil.hide()
-
-                                    saveOnLocalDatabase(response)
-                                    startActivity(
-                                        Intent(
-                                            this@Screen_Login,
-                                            Screen_main::class.java
-                                        )
-                                    )
-                                    finish()
-                                }
-                                else -> {
-                                    ProgressDialogUtil.hide()
-                                    showAlertTapadoo(
-                                        this@Screen_Login,
-                                        "Laboro",
-                                        "Erro ao aceder conta.\nVerifique as suas credencias de acesso ou tente recuperar a sua conta.",
-                                        R.color.colorMediumRed
-                                    )
-                                }
-                            }
-                        }
-
+                        resource.data?.let { response ->
+                            saveOnLocalDatabase(resource.data)
+                            startActivity(
+                                Intent(
+                                    this@Screen_Login,
+                                    Screen_main::class.java
+                                )
+                            )
                         }
                     }
                     Status.ERROR -> {
                         ProgressDialogUtil.hide()
-                        showAlertTapadoo(
-                            this,
-                            "Laboro",
-                            "Erro ao criar conta.",
-                            R.color.colorMediumRed
-                        )
+                        resource.data?.let { response ->
+                            showAlertTapadoo(
+                                this,
+                                "Laboro",
+                                "${response.Erros[0].description}",
+                                R.color.colorMediumRed
+                            )
+                        }
+
                     }
                 }
             }
@@ -96,7 +79,6 @@ class Screen_Login : AppCompatActivity() {
         HawkStorage().putData(DatabaseKeys.firstName, account.userFristName)
         HawkStorage().putData(DatabaseKeys.owner, account.userOwner )
         HawkStorage().putData(DatabaseKeys.token, account.token)
-
 
     }
 }

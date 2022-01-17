@@ -1,11 +1,9 @@
-package com.filomenadeveloper.laboro_new_version.ui.venda
+package com.filomenadeveloper.laboro_new_version.ui.drawer.venda
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
-import android.widget.TextView
-import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.filomenadeveloper.laboro_new_version.R
 import kotlin.collections.ArrayList

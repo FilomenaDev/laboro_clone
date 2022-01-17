@@ -1,7 +1,8 @@
-package com.filomenadeveloper.laboro_new_version
+package com.filomenadeveloper.laboro_new_version.ui.authentication
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.liveData
+import com.filomenadeveloper.laboro_new_version.Resource
 import com.filomenadeveloper.laboro_new_version.data.api.UserModel
 import com.filomenadeveloper.laboro_new_version.data.repository.Repository
 import kotlinx.coroutines.Dispatchers
