@@ -2,11 +2,14 @@ package com.filomenadeveloper.laboro_new_version.data.api
 
 import com.filomenadeveloper.laboro_new_version.BuildConfig
 import com.filomenadeveloper.laboro_new_version.data.api.interceptors.AuthInterceptor
+import com.filomenadeveloper.laboro_new_version.data.models.CategoresModel
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.Body
+import retrofit2.http.GET
+import retrofit2.http.Header
 import retrofit2.http.POST
 import java.util.concurrent.TimeUnit
 
@@ -51,4 +54,10 @@ interface ApiClient {
         @Body body: HashMap<String, Any>
     ): UserModel
 
+    @POST("categories")
+    suspend fun postCreateCategory(@Header("Authorization") token:String?,
+                                   @Body body: HashMap<String, Any>):CategoresModel
+
+    @GET("categories")
+    suspend fun  getCategories(@Header("Authorization") token:String?):List<CategoresModel>
 }

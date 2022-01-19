@@ -4,6 +4,7 @@
     package="com.filomenadeveloper.laboro_new_version">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
@@ -44,6 +45,9 @@
             android:name=".ui.authentication.Screen_Login"
             android:label="@string/app_name"
             android:theme="@style/Theme.Laboro_New_Version.NoActionBar"></activity>
+        <activity
+            android:name=".ui.drawer.drawer_produts.category.ActivityAddCategory"
+            android:label="@string/app_name"></activity>
         <activity
             android:name=".ui.drawer.drawer_produts.product.ActivityAddProduts"
             android:label="@string/app_name"

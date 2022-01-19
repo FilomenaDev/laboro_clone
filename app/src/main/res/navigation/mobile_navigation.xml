@@ -16,7 +16,7 @@
         android:id="@+id/nav_product"
         android:name="com.filomenadeveloper.laboro_new_version.ui.drawer.drawer_produts.ProductFragmentNavigation"
         android:label="@string/menu_product"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_category" />
 
 
     <fragment

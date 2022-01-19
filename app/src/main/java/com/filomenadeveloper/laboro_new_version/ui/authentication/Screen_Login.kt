@@ -61,7 +61,7 @@ class Screen_Login : AppCompatActivity() {
                             showAlertTapadoo(
                                 this,
                                 "Laboro",
-                                "${response.Erros[0].description}",
+                                "Verica sua conexao",
                                 R.color.colorMediumRed
                             )
                         }
