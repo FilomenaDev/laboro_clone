@@ -4,15 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/fragment_container"
     tools:context=".ui.drawer.drawer_produts.product.addProducts.ActivityAddProduts">
 
     <com.google.android.material.tabs.TabLayout
-        android:id="@+id/tabs"
+        android:id="@+id/tabs_manage_product"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <com.google.android.material.tabs.TabItem
-            android:text="Intem"
+            android:text="Produtos"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
@@ -20,24 +21,20 @@
             android:text="Estoque"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
-        <com.google.android.material.tabs.TabItem
-            android:text="Categoria"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
 
     </com.google.android.material.tabs.TabLayout>
 
 
     <androidx.viewpager.widget.ViewPager
-        android:id="@+id/view_pager"
+        android:id="@+id/view_pager_manege_product"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/tabs"
+        android:layout_below="@+id/tabs_manage_product"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tabs" />
+        app:layout_constraintTop_toBottomOf="@id/tabs_manage_product" />
 
 
 </RelativeLayout>

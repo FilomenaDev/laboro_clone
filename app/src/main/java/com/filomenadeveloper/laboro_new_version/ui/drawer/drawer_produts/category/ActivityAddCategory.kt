@@ -49,15 +49,12 @@ class ActivityAddCategory: AppCompatActivity() {
                         }
                     }
                     Status.ERROR -> {
-                        resource.data?.let { response ->
                             showAlertTapadoo(
                                 this,
                                 "Laboro",
                                 "Verica sua conexao",
                                 R.color.colorMediumRed
                             )
-                        }
-
                     }
                 }
             }

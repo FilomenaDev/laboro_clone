@@ -18,15 +18,12 @@ import com.google.android.material.tabs.TabLayout
 
 class ProductFragmentNavigation : Fragment() {
 
-    private lateinit var productViewModel: ProductViewModel
-
     @SuppressLint("UseRequireInsteadOfGet", "ResourceAsColor")
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        productViewModel = ViewModelProvider(this).get(ProductViewModel::class.java)
         val root = inflater.inflate(R.layout.activity_main, container, false)
         val sectionsPagerAdapter = SectionsPagerAdapter(fragmentManager!!,FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT)
         val viewPager: ViewPager = root.findViewById(R.id.view_pager)

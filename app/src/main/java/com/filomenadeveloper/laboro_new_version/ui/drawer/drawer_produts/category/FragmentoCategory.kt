@@ -20,8 +20,7 @@ class FragmentoCategory : Fragment() {
     private lateinit var root: View
     private lateinit var ButtonAddCategory: AppCompatImageButton
     private val categoryoOfProdutView : ViewModelCategory by viewModel()
-
-    private lateinit var adapterCategories: AdapterCategory
+    var adapterCategories: AdapterCategory = AdapterCategory()
     private lateinit var recyclerviewCategory: RecyclerView
 
     override fun onCreateView(
@@ -36,9 +35,8 @@ class FragmentoCategory : Fragment() {
         recyclerviewCategory.layoutManager = LinearLayoutManager(
             requireContext(),
             LinearLayoutManager.VERTICAL,
-            false
+            false,
         )
-
         ButtonAddCategory.setOnClickListener {
             startActivity(
                 Intent(
@@ -59,7 +57,8 @@ class FragmentoCategory : Fragment() {
                     Status.LOADING ->{}
                         Status.SUCCESS -> {
                         resource.data?.let { response ->
-                            adapterCategories = AdapterCategory(response)
+                            print(response[0].nameCategory)
+                            adapterCategories.addAll(response)
                             recyclerviewCategory.adapter = adapterCategories
 
                         }

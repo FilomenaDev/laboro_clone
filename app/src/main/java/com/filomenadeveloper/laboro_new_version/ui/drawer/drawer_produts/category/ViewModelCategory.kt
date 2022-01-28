@@ -21,7 +21,7 @@ class ViewModelCategory(private val repository: Repository): ViewModel() {
         }
     }
 
-    fun getCategories()= liveData<Resource<List<CategoresModel>>>(Dispatchers.IO){
+    fun getCategories()= liveData<Resource<MutableList<CategoresModel>>>(Dispatchers.IO){
         emit(Resource.loading(data = null))
 
         try {

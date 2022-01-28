@@ -3,14 +3,14 @@ package com.filomenadeveloper.laboro_new_version.data.api
 import com.filomenadeveloper.laboro_new_version.BuildConfig
 import com.filomenadeveloper.laboro_new_version.data.api.interceptors.AuthInterceptor
 import com.filomenadeveloper.laboro_new_version.data.models.CategoresModel
+import com.filomenadeveloper.laboro_new_version.data.models.ProductOfModel
+import okhttp3.MultipartBody
 import okhttp3.OkHttpClient
+import okhttp3.RequestBody
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.http.Body
-import retrofit2.http.GET
-import retrofit2.http.Header
-import retrofit2.http.POST
+import retrofit2.http.*
 import java.util.concurrent.TimeUnit
 
 interface ApiClient {
@@ -57,7 +57,12 @@ interface ApiClient {
     @POST("categories")
     suspend fun postCreateCategory(@Header("Authorization") token:String?,
                                    @Body body: HashMap<String, Any>):CategoresModel
+    @Multipart
+    @POST("products")
+    suspend fun postCreateProduct( @Header("Content-Type") contentType: String,
+                                   @Header("Authorization") token:String?,
+                                   @Part("image") body: MultipartBody):ProductOfModel
 
     @GET("categories")
-    suspend fun  getCategories(@Header("Authorization") token:String?):List<CategoresModel>
+    suspend fun  getCategories(@Header("Authorization") token:String?):MutableList<CategoresModel>
 }

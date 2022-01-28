@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.filomenadeveloper.laboro_new_version.R
 import kotlin.collections.ArrayList
@@ -14,7 +15,7 @@ class AdapterVenda(val venda: ArrayList<venda>): RecyclerView.Adapter<AdapterVen
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         fun bindItems(vend: venda){
-          //  val mCardview = itemView.findViewById(R.id.card) as CardView
+           val mCardview = itemView.findViewById(R.id.card) as CardView
             val textCard = itemView.findViewById(R.id.textcard) as ImageView
             textCard.setImageResource(vend.descricao)
 

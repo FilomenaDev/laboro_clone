@@ -12,9 +12,9 @@ import com.filomenadeveloper.laboro_new_version.R
 import com.filomenadeveloper.laboro_new_version.data.models.CategoresModel
 
 
-class AdapterCategory(val categories: List<CategoresModel>) : RecyclerView.Adapter<AdapterCategory.CategoriesHolder>() {
+class AdapterCategory() : RecyclerView.Adapter<AdapterCategory.CategoriesHolder>() {
 
-
+    private var categories: MutableList<CategoresModel> = mutableListOf()
     inner class CategoriesHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         @SuppressLint("ResourceAsColor")
@@ -42,4 +42,9 @@ class AdapterCategory(val categories: List<CategoresModel>) : RecyclerView.Adapt
     }
 
     override fun getItemCount(): Int = categories.count()
+
+    fun addAll(input: MutableList<CategoresModel>) {
+        categories = input
+        notifyDataSetChanged()
+    }
 }
