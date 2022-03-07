@@ -30,12 +30,12 @@
 
        <ImageView
            android:id="@+id/image_product"
-           android:layout_toRightOf="@+id/layout_item_product"
-           android:layout_marginTop="60dp"
-           android:layout_marginLeft="5dp"
-           android:src="@drawable/ic_baseline_image_24"
            android:layout_width="50dp"
-           android:layout_height="50dp" />
+           android:layout_height="50dp"
+           android:layout_marginLeft="5dp"
+           android:layout_marginTop="60dp"
+           android:layout_toRightOf="@+id/layout_item_product"
+           android:src="@drawable/ic_baseline_image_24" />
    </RelativeLayout>
 
     <View

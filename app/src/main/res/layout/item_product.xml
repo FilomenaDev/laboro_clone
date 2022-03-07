@@ -28,27 +28,29 @@
     android:id="@+id/ll_first_line_container"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content">
+
     <TextView
         android:id="@+id/tv_model"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:textSize="13sp"
-        android:textColor="#FFF"
-        android:text="Nome"
+        android:ellipsize="end"
         android:maxLines="2"
-        android:ellipsize="end"/>
+        android:text="Nome"
+        android:textColor="#FFF"
+        android:textSize="13sp" />
+
     <TextView
         android:id="@+id/tv_desc"
-        android:layout_below="@+id/tv_model"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_model"
         android:layout_weight="1"
-        android:textSize="10sp"
-        android:textColor="#FFF"
-        android:text="Descricao"
+        android:ellipsize="end"
         android:maxLines="2"
-        android:ellipsize="end"/>
+        android:text="Descricao"
+        android:textColor="#FFF"
+        android:textSize="10sp" />
 </RelativeLayout>
 
             <View
@@ -67,12 +69,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/v_first_horizontal_line"
-                android:layout_alignParentRight="true"
                 android:layout_alignParentEnd="true"
-                android:textStyle="italic"
+                android:layout_alignParentRight="true"
                 android:text="Preco"
+                android:textColor="@color/colorLightBlue"
                 android:textSize="14sp"
-                android:textColor="@color/colorLightBlue"/>
+                android:textStyle="italic" />
 
             <TextView
                 android:id="@+id/tv_price_without_discount"

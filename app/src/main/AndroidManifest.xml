@@ -53,7 +53,7 @@
         <activity
             android:name=".ui.drawer.drawer_produts.product.NavigationManegerProducts"
             android:label="@string/app_name"
-            android:theme="@style/Theme.Laboro_New_Version.NoActionBar"></activity>
+            android:theme="@style/Theme.Laboro_New_Version"></activity>
     </application>
 
 </manifest>

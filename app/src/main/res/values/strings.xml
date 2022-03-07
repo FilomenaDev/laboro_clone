@@ -16,6 +16,8 @@
     <string name="menu_congig">Configuração</string>
     <string name="text_button_produt">Adiciona Produto</string>
 
+    <string name="add_fragment_title">Add Item</string>
+
     <string-array name="categorias">
         <item>Select</item>
         <item>Categoria</item>

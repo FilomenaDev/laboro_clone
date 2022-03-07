@@ -18,13 +18,4 @@ class AuthInterceptor : Interceptor {
         return response
     }
 
-    private fun saveOnLocalDatabase(account: UserModel) {
-        HawkStorage().putData(DatabaseKeys.id, account.userId)
-        HawkStorage().putData(DatabaseKeys.email, account.userEmail)
-        HawkStorage().putData(DatabaseKeys.firstName, account.userFristName)
-        HawkStorage().putData(DatabaseKeys.owner, account.userOwner )
-        HawkStorage().putData(DatabaseKeys.token, account.token)
-
-
-    }
 }

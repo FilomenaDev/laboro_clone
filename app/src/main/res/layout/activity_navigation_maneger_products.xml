@@ -5,22 +5,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/fragment_container"
-    tools:context=".ui.drawer.drawer_produts.product.addProducts.ActivityAddProduts">
+    android:orientation="vertical"
+    tools:context=".ui.drawer.drawer_produts.product.FragmentOfUnityProduct">
+
+
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabs_manage_product"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="60dp">
 
         <com.google.android.material.tabs.TabItem
-            android:text="Produtos"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:text="Produtos" />
 
         <com.google.android.material.tabs.TabItem
-            android:text="Estoque"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:text="Estoque" />
 
     </com.google.android.material.tabs.TabLayout>
 
@@ -28,7 +31,7 @@
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/view_pager_manege_product"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_below="@+id/tabs_manage_product"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

@@ -3,6 +3,7 @@ package com.filomenadeveloper.laboro_new_version
 import android.app.Application
 import android.os.StrictMode
 import com.filomenadeveloper.laboro_new_version.app.injections.mainModule
+import com.filomenadeveloper.laboro_new_version.database.baseModels.LaboroDatabase
 import com.orhanobut.hawk.Hawk
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
@@ -32,4 +33,6 @@ class AppLaboro: Application() {
                 .build()
         )
     }
+
+    val database: LaboroDatabase by lazy { LaboroDatabase.getDatabase(this) }
 }

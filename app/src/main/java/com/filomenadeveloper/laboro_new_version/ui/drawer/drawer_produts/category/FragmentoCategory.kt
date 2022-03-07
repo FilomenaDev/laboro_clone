@@ -57,7 +57,6 @@ class FragmentoCategory : Fragment() {
                     Status.LOADING ->{}
                         Status.SUCCESS -> {
                         resource.data?.let { response ->
-                            print(response[0].nameCategory)
                             adapterCategories.addAll(response)
                             recyclerviewCategory.adapter = adapterCategories
 

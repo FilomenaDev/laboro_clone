@@ -14,6 +14,7 @@ object DatabaseKeys {
     const val token: String = "idTokenKey"
 }
 
+
 class HawkStorage {
 
     fun clearData() {
@@ -22,6 +23,9 @@ class HawkStorage {
 
     fun putData(key: String, value: Any) {
         Hawk.put(key, value)
+    }
+    fun addData(key: String, value: Any) {
+
     }
 
     fun getData(key: String): Any? = if (checkData(DatabaseKeys.id)) Hawk.get(key, Any()) else Any()

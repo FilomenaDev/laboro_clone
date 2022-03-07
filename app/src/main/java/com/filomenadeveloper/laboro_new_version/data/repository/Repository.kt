@@ -22,8 +22,8 @@ class Repository(private val apiClient: ApiClient) {
         return apiClient.postCreateCategory("Token ${HawkStorage().getData("idTokenKey").toString()}",body)
     }
 
-    suspend fun createProducts(body: MultipartBody):ProductOfModel{
-        return apiClient.postCreateProduct("multipart/form-data; boundary=" + body.boundary,"Token ${HawkStorage().getData("idTokenKey").toString()}", body)
+    suspend fun createProducts( body: RequestBody):ProductOfModel{
+        return apiClient.postCreateProduct("multipart/form-data","Token ${HawkStorage().getData("idTokenKey").toString()}", body)
     }
     suspend fun ListOfCategories(): MutableList<CategoresModel>{
         return apiClient.getCategories("Token ${HawkStorage().getData("idTokenKey").toString()}")

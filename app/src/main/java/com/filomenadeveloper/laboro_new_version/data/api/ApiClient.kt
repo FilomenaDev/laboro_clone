@@ -61,7 +61,7 @@ interface ApiClient {
     @POST("products")
     suspend fun postCreateProduct( @Header("Content-Type") contentType: String,
                                    @Header("Authorization") token:String?,
-                                   @Part("image") body: MultipartBody):ProductOfModel
+                                   @Part("image") body: RequestBody):ProductOfModel
 
     @GET("categories")
     suspend fun  getCategories(@Header("Authorization") token:String?):MutableList<CategoresModel>

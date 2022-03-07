@@ -45,7 +45,7 @@ class ActivityAddCategory: AppCompatActivity() {
                 when(resource.status){
                     Status.SUCCESS ->{
                         resource.data?.let { response ->
-                           supportFragmentManager.beginTransaction().add(R.id.view_pager, FragmentoCategory()).commit()
+                           supportFragmentManager.beginTransaction().replace(R.id.view_pager, FragmentoCategory()).commit()
                         }
                     }
                     Status.ERROR -> {

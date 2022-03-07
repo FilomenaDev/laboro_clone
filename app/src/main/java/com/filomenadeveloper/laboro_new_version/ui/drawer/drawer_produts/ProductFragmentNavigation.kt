@@ -7,13 +7,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentPagerAdapter
-import androidx.lifecycle.ViewModelProvider
 import androidx.viewpager.widget.ViewPager
 import com.filomenadeveloper.laboro_new_version.R
-import com.filomenadeveloper.laboro_new_version.ui.drawer.drawer_catalogo_onlain.CatalogoOnlainFragment
 import com.filomenadeveloper.laboro_new_version.ui.drawer.drawer_produts.category.FragmentoCategory
 import com.filomenadeveloper.laboro_new_version.ui.drawer.drawer_produts.product.FragmentProdut
-import com.filomenadeveloper.laboro_new_version.ui.drawer.drawer_produts.stockofproduts.StockProdutFragment
+import com.filomenadeveloper.laboro_new_version.ui.drawer.drawer_produts.product.stockofproduts.StockProdutFragment
 import com.google.android.material.tabs.TabLayout
 
 class ProductFragmentNavigation : Fragment() {
